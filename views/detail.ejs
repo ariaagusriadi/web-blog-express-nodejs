@@ -1,0 +1,19 @@
+<article class="mb-4">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <h3><%= blog.title %></h3>
+        <p><%= blog.content %></p>
+        <div class="float-end">
+        <a href="/blog/edit/<%= blog._id %>" class="btn btn-warning">Edit</a>
+        <form action="/blog/destroy?_method=DELETE" method="post" class="d-inline">
+          <input type="hidden" name="_id" value="<%= blog._id %>">
+          <button class="btn btn-danger" onclick="return confirm('Are You Sure Delete?')">Delete</button>
+        </form>
+        </div>
+      </div>
+     </div>
+  </div>
+</article>
+
+

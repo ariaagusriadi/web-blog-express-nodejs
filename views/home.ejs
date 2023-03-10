@@ -1,0 +1,28 @@
+<a href="/create" class="btn btn-dark float-end mb-2">Create new Blog</a>
+<div class="row gx-4 gx-lg-5 justify-content-center">
+     <div class="col-md-10 col-lg-8 col-xl-7">
+
+          <% if(msg.length != 0){ %>
+               <div class="alert alert-success" role="alert">
+                    <%= msg %>
+               </div>
+          <% } %>
+
+         <!-- Post preview-->
+         <% blog.forEach((blog, i) => { i++ %>
+         <div class="post-preview">
+             <a href="/blog/<%= blog._id %>">
+                 <h2 class="post-title"><%= blog.title  %></h2>
+                 <h3 class="post-subtitle">
+                    <% if(blog.content.length > 10){ %>
+                         <%= blog.content.substr(1,200) %> ...
+                    <% } else {%>
+                         <%= blog.content %>
+                    <% } %>
+               </h3>
+             </a>
+         </div>
+         <hr>
+         <% }) %>
+     </div>
+ </div>
